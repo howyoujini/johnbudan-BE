@@ -27,29 +27,3 @@ def exist_user_id(request: dict):
     else:
         existing_ids.add(user_id)
         return {"result": False}
-
-
-# @app.post("/users/sign-up")
-# def sign_up(request: dict):
-#     # 회원가입 로직
-#     user_id = request.get('userId')
-#     nickname = request.get('nickname')
-#     password = request.get('password')
-#     existing_ids = set() # 이미 생성된 ID들을 저장하는 set
-
-#     # 중복 검사 로직
-#     if user_id in existing_ids:
-#         return {"result": False, "message": "User ID already exists."}
-
-#     # 닉네임 검사 로직
-#     if not is_valid_nickname(nickname):
-#         return {"result": False, "message": "Invalid nickname format."}
-
-#     # 비밀번호 검사 로직
-#     if not is_valid_password(password):
-#         return {"result": False, "message": "Invalid password format."}
-
-#     # 회원 정보 저장 로직
-#     save_user_info(user_id, nickname, password)
-#     existing_ids.add(user_id)
-#     return {"result": True, "message": "Sign up successful."}
